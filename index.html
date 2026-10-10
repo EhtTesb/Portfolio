@@ -89,7 +89,7 @@ main,footer{position:relative;z-index:1}
 /* ===== EDIT THIS BLOCK: all your text, links and image paths live here ===== */
 const SITE = {
   name: "gabriel_akerman",
-  intro: "Electrical Engineering student at the University of Waterloo. I design PCBs, firmware, and low-power electronics. FUTUdRE  ASIC GOAT",
+  intro: "Electrical Engineering student at the University of Waterloo. I design PCBs, firmware, and low-power electronics. FUTURE  ASIC GOAT",
   email: "gakerman@uwaterloo.ca",
   linkedin: "https://www.linkedin.com/in/gabriel-akerman/",
   github: "https://github.com/EhtTesb",
@@ -153,7 +153,7 @@ const ICON = {
 const ico = n => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
 $("#cl").innerHTML = `<a class="ct" href="mailto:${esc(SITE.email)}">${ico("mail")}${esc(SITE.email)}</a><a class="ct" href="${esc(SITE.linkedin)}" target="_blank" rel="noopener">${ico("linkedin")}LinkedIn</a><a class="ct" href="${esc(SITE.github)}" target="_blank" rel="noopener">${ico("github")}GitHub</a>`;
 const pdf = esc(SITE.resume);
-$("#rb").innerHTML = `<div class="rt">${SITE.resumeImage ? `<img id="rimg" src="${esc(SITE.resumeImage)}" alt="Resume, page 1">` : "<span>[resume page 1]</span>"}</div><div class="rc"><span>Preview of my resume. Open or download the PDF for the full version.</span><div class="ra"><a class="btn" href="${pdf}" target="_blank" rel="noopener">Open PDF</a><a class="dl" href="${pdf}" download>Download</a></div></div>`;
+$("#rb").innerHTML = `<div class="rt"><iframe src="${pdf}#view=FitH" style="width:100%;height:600px;border:none;" title="Resume PDF"></iframe></div></div><div class="rc"><span>Preview of my resume. Open or download the PDF for the full version.</span><div class="ra"><a class="btn" href="${pdf}" target="_blank" rel="noopener">Open PDF</a><a class="dl" href="${pdf}" download>Download</a></div></div>`;
 const ri = $("#rimg");
 if (ri) ri.addEventListener("error", () => { console.warn("Resume preview not found: " + SITE.resumeImage); ri.parentNode.innerHTML = '<span class="nf">Resume preview unavailable. Use the buttons below.</span>'; });
 $("#ft").innerHTML = `<div class="fi"><span>&copy; 2026 Gabriel Akerman</span></div>`;
